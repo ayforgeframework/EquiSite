@@ -1,23 +1,13 @@
 {
   "name": "equisite-framework",
   "version": "0.1.0",
-  "description": "EquiSite Framework - Accessibility-first web framework. Code once, include all.",
+  "description": "EquiSite Framework - Accessibility-first web framework",
   "main": "src/index.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
-  "keywords": [
-    "accessibility",
-    "a11y",
-    "framework",
-    "web",
-    "inclusive",
-    "equity"
-  ],
-  "author": "EquiSite Framework Contributors",
-  "license": "MIT",
   "devDependencies": {
     "vite": "^5.0.0"
   }

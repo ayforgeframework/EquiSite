@@ -1,16 +1,11 @@
-/**
- * EquiSite Framework - starter entry
- * Code once, include all.
- */
-
-import { initThemeToggle } from "./utils/theme.js";
-import { initFontControls } from "./utils/fontResize.js";
-import { ensureSkipLink } from "./utils/skipLink.js";
-import { announce } from "./utils/ariaAnnouncer.js";
+import { initThemeToggle } from './utils/theme.js';
+import { initFontControls } from './utils/fontResize.js';
+import { ensureSkipLink } from './utils/skipLink.js';
+import { announce } from './utils/ariaAnnouncer.js';
 
 const EquiSite = {
   initEquiSite() {
-    console.log("✅ EquiSite Framework initialized — Code once, include all.");
+    console.log('EquiSite initialized');
     ensureSkipLink('main');
   },
   announce,
@@ -18,8 +13,5 @@ const EquiSite = {
   initFontControls
 };
 
-if (typeof window !== 'undefined') {
-  window.EquiSite = EquiSite;
-}
-
+if (typeof window !== 'undefined') window.EquiSite = EquiSite;
 export default EquiSite;
