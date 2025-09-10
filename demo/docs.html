@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Docs — EquiSite</title>
+  <link rel="stylesheet" href="/public/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="header">
+    <div class="logo"><img src="/public/logo-light.svg" alt="EquiSite logo" /></div>
+    <nav class="nav" aria-label="Main">
+      <ul>
+        <li><a href="/demo/index.html">Home</a></li>
+        <li><a href="/demo/docs.html">Docs</a></li>
+        <li><a href="/demo/components.html">Components</a></li>
+        <li><a href="/demo/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="controls">
+      <button id="themeToggle" class="toggle" aria-pressed="false">🌙</button>
+      <button id="fontInc" class="toggle">A+</button>
+      <button id="fontDec" class="toggle">A-</button>
+    </div>
+  </header>
+
+  <main id="content" class="layout" role="main">
+    <aside class="sidebar" role="navigation" aria-label="Documentation">
+      <h2>Docs</h2>
+      <ul>
+        <li><a href="#getting-started">Getting Started</a></li>
+        <li><a href="#utilities">Utilities</a></li>
+        <li><a href="#templates">Templates</a></li>
+        <li><a href="#components">Components</a></li>
+        <li><a href="#contributing">Contributing</a></li>
+      </ul>
+    </aside>
+    <section class="content" aria-live="polite">
+      <h1 id="getting-started">Getting Started</h1>
+      <p>Welcome to EquiSite. Include the script and initialize:</p>
+      <pre><code>import EquiSite from '/src/index.js'; EquiSite.initEquiSite();</code></pre>
+
+      <h2 id="utilities">Utilities</h2>
+      <p>EquiSite provides utilities for theme switching, font resizing, skip links, focus traps, and ARIA announcements.</p>
+
+      <h2 id="templates">Templates</h2>
+      <p>Use <code>/demo/templates/docs.html</code> as a starting point for your own documentation site.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 EquiSite Framework</p>
+  </footer>
+
+  <script type="module">
+    import EquiSite from '/src/index.js';
+    EquiSite.initEquiSite();
+    const themeBtn = document.getElementById('themeToggle');
+    const inc = document.getElementById('fontInc');
+    const dec = document.getElementById('fontDec');
+    EquiSite.initThemeToggle(themeBtn);
+    EquiSite.initFontControls(inc, dec);
+  </script>
+</body>
+</html>

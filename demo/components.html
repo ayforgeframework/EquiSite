@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" /><title>Components — EquiSite</title>
+<link rel="stylesheet" href="/public/styles.css" /></head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="header">
+    <div class="logo"><img src="/public/logo-light.svg" alt="EquiSite logo" /></div>
+    <nav class="nav" aria-label="Main"><ul><li><a href="/demo/index.html">Home</a></li><li><a href="/demo/docs.html">Docs</a></li></ul></nav>
+    <div class="controls"><button id="themeToggle" class="toggle">🌙</button><button id="fontInc" class="toggle">A+</button><button id="fontDec" class="toggle">A-</button></div>
+  </header>
+  <main id="main" style="max-width:900px;margin:24px auto;padding:0 20px;">
+    <h1>Components</h1>
+    <section>
+      <h2>Modal (focus trap)</h2>
+      <button id="openModal">Open modal</button>
+      <div id="modal" role="dialog" aria-modal="true" hidden>
+        <div class="modal-content card">
+          <p>This is a modal dialog.</p>
+          <button id="closeModal">Close</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><p>© 2025 EquiSite Framework</p></footer>
+
+  <script type="module">
+    import EquiSite from '/src/index.js';
+    import { trapFocus } from '/src/utils/focusTrap.js';
+    EquiSite.initEquiSite();
+    const themeBtn = document.getElementById('themeToggle');
+    const inc = document.getElementById('fontInc');
+    const dec = document.getElementById('fontDec');
+    EquiSite.initThemeToggle(themeBtn);
+    EquiSite.initFontControls(inc, dec);
+
+    const open = document.getElementById('openModal');
+    const modal = document.getElementById('modal');
+    const close = document.getElementById('closeModal');
+    let cleanup;
+    open.addEventListener('click', () => {
+      modal.hidden = false;
+      cleanup = trapFocus(modal);
+    });
+    close.addEventListener('click', () => {
+      modal.hidden = true;
+      cleanup && cleanup();
+    });
+  </script>
+</body>
+</html>

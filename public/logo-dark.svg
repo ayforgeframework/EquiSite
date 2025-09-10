@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="120" viewBox="0 0 400 120">
+  <g transform="translate(20,20)">
+    <circle cx="30" cy="30" r="28" fill="#0056B3" />
+    <text x="16" y="42" font-family="Georgia, 'Times New Roman', serif" font-size="48" font-weight="700" fill="#121212">E</text>
+  </g>
+  <text x="90" y="72" font-family="Georgia, 'Times New Roman', serif" font-size="48" fill="#EEEEEE">EquiSite</text>
+</svg>
